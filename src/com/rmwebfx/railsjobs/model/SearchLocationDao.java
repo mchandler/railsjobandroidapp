@@ -93,7 +93,7 @@ public class SearchLocationDao implements IDao {
 		
 		String[] sqlArgs = {"1"};
 		StringBuilder builder = new StringBuilder();
-		builder.append("select " + BaseColumns._ID + ", city, state, postal, addedOn from ");
+		builder.append("select " + BaseColumns._ID + ", city, state, postal, updatedOn from ");
 		builder.append(Database.LOCATION_TABLE + " ORDER BY " + BaseColumns._ID + " DESC ");
 		builder.append("LIMIT ?");
 		
