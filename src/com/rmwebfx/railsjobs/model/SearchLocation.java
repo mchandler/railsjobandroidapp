@@ -10,6 +10,10 @@ public class SearchLocation extends ActiveRecord implements IPersistent {
 	private String state;
 	private String postal;
 	
+	public SearchLocation() {
+		
+	}
+	
 	public SearchLocation(Context context) {
 		super();
 		dao = new SearchLocationDao(context); // wire in the data access object
