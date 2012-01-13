@@ -27,6 +27,10 @@ public class StartScreen extends Activity {
     		// no location set, redirect to Set Location activity
     		Intent intent = new Intent().setClass(this, SetLocation.class);
     		startActivity(intent);
+    	} else {
+    		// a location is set, so let's show some jobs!
+    		Intent intent = new Intent().setClass(this, JobsViewer.class);
+    		startActivity(intent);
     	}
     }
 }
