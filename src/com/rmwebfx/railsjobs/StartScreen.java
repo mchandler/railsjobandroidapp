@@ -14,8 +14,6 @@ public class StartScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        Log.d("Rails Jobs Starting:","StartScreen");
-        
         initializeLocation();
     }
     

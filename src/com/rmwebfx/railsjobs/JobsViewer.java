@@ -1,8 +1,8 @@
 package com.rmwebfx.railsjobs;
 
 import java.net.MalformedURLException;
-import java.net.URLEncoder;
 import java.net.URL;
+import java.net.URLEncoder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,14 +26,25 @@ public class JobsViewer extends Activity implements IServerRequestor{
         Log.d("Rails Jobs Finder:","Looking for jobs...");
         
         SearchLocation location = (SearchLocation) new SearchLocation(this).getLatestRecord();
-    	try {
-			URL feedURL = new URL(constructURL(location));
-			ServerCaller caller = new ServerCaller(this, feedURL, "GET");
-			Thread jsonFinder = new Thread(caller);
-			jsonFinder.start(); // spawn a thread that calls the feed -- it calls back to handleServerResponse().
+        // **************************************************** //
+        // TODO: Remove this test data
+        location.setCity("Simi Valley");
+        location.setState("CA");
+        location.setPostal("93065");
+        // TODO: Remove test data above
+        // **************************************************** //
+    		
+        URL feedURL = null;
+		try {
+			feedURL = new URL(constructURL(location));
 		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		ServerCaller caller = new ServerCaller(this, feedURL);
+		Thread jsonFinder = new Thread(caller);
+		jsonFinder.start(); // spawn a thread that calls the feed.
     }
 
 	public void handleServerResponse(JSONObject json) throws JSONException {
@@ -50,6 +61,8 @@ public class JobsViewer extends Activity implements IServerRequestor{
 		
 		sb.append(doLimitString());
 		sb.append("&format=json");
+		
+		Log.d("Remote URL",sb.toString());
 		
 		return sb.toString();
 	}
