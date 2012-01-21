@@ -20,15 +20,15 @@ public class StartScreen extends Activity {
     public void initializeLocation() {
     	SearchLocation location = (SearchLocation) new SearchLocation(this).getLatestRecord();
     	
-    	if (location == null || location.getCity() == null || location.getState() == null
-    			|| location.getPostal() == null) {
+    	//if (location == null || location.getCity() == null || location.getState() == null
+    			//|| location.getPostal() == null) {
     		// no location set, redirect to Set Location activity
-    		Intent intent = new Intent().setClass(this, SetLocation.class);
-    		startActivity(intent);
-    	} else {
+    		//Intent intent = new Intent().setClass(this, SetLocation.class);
+    		//startActivity(intent);
+    	//} else {
     		// a location is set, so let's show some jobs!
     		Intent intent = new Intent().setClass(this, JobsViewer.class);
     		startActivity(intent);
-    	}
+    	//}
     }
 }

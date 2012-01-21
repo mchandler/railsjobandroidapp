@@ -4,12 +4,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.rmwebfx.common.json.IServerRequestor;
 import com.rmwebfx.common.json.ServerCaller;
 import com.rmwebfx.railsjobs.config.Constants;
+import com.rmwebfx.railsjobs.helpers.LocationStringFormatter;
 import com.rmwebfx.railsjobs.model.SearchLocation;
 
 import android.app.Activity;
@@ -36,7 +38,7 @@ public class JobsViewer extends Activity implements IServerRequestor{
     		
         URL feedURL = null;
 		try {
-			feedURL = new URL(constructURL(location));
+			feedURL = new URL(LocationStringFormatter.doFormat(location));
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -49,50 +51,9 @@ public class JobsViewer extends Activity implements IServerRequestor{
 
 	public void handleServerResponse(JSONObject json) throws JSONException {
 		// TODO Auto-generated method stub
+		Log.d("JSON", json.toString());
+		JSONArray resultsArray = json.getJSONArray("results");
 		
-	}
-	
-	public String constructURL(SearchLocation location) {
-		StringBuilder sb = new StringBuilder();
-		sb.append(Constants.indeedURL + "?v=2&publisher=" + Constants.publisherID);
-		sb.append("&q=" + Constants.searchQuery);
-		
-		sb.append("&l=" + doLocationString(location));
-		
-		sb.append(doLimitString());
-		sb.append("&format=json");
-		
-		Log.d("Remote URL",sb.toString());
-		
-		return sb.toString();
-	}
-    
-    public String doLocationString(SearchLocation location) {
-		StringBuilder sb = new StringBuilder();
-		
-		if (location.getCity() != null && location.getCity().length() > 0) {
-			sb.append(location.getCity().toLowerCase().trim());
-		}
-		
-		if (location.getState() != null && location.getState().length() > 0) {
-			if (sb.toString().length() > 0) {
-				sb.append(", ");
-			}
-			sb.append(location.getState().toLowerCase().trim());
-		}
-		
-		if (location.getPostal() != null && location.getPostal().length() > 0) {
-			if (sb.toString().length() > 0) {
-				sb.append(" ");
-			}
-			sb.append(location.getPostal().trim());
-		}
-		
-		return URLEncoder.encode(sb.toString());
-	}
-	
-	public String doLimitString() {
-		return "&limit=" + Constants.jobCountLimit;
 	}
     
 }
