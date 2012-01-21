@@ -2,7 +2,7 @@ package com.rmwebfx.railsjobs;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
+import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -10,8 +10,9 @@ import org.json.JSONObject;
 
 import com.rmwebfx.common.json.IServerRequestor;
 import com.rmwebfx.common.json.ServerCaller;
-import com.rmwebfx.railsjobs.config.Constants;
+import com.rmwebfx.railsjobs.helpers.JobsArrayBuilder;
 import com.rmwebfx.railsjobs.helpers.LocationStringFormatter;
+import com.rmwebfx.railsjobs.model.Job;
 import com.rmwebfx.railsjobs.model.SearchLocation;
 
 import android.app.Activity;
@@ -50,10 +51,11 @@ public class JobsViewer extends Activity implements IServerRequestor{
     }
 
 	public void handleServerResponse(JSONObject json) throws JSONException {
-		// TODO Auto-generated method stub
 		Log.d("JSON", json.toString());
 		JSONArray resultsArray = json.getJSONArray("results");
-		
+		JobsArrayBuilder builder = new JobsArrayBuilder();
+		ArrayList<Job> jobsArray = (ArrayList<Job>) builder.parse(resultsArray);
+		Log.d("ArrayDEBUG", new Integer(jobsArray.size()).toString());
 	}
     
 }

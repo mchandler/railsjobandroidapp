@@ -15,7 +15,8 @@ public class JobListViewAdapter extends BaseAdapter {
 	private ArrayList<Job> jobArray;
 	private LayoutInflater inflater;
 
-	public JobListViewAdapter(Context context, ArrayList<Job> logArray) {
+	public JobListViewAdapter(Context context, int resourceId, ArrayList<Job> jobArray) {
+		super();
 		this.jobArray = jobArray;
 		inflater = LayoutInflater.from(context);
 	}
@@ -35,5 +36,13 @@ public class JobListViewAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	static class Holder {
+		String jobtitle;
+		String company;
+		String city;
+		String state;
+		String url;
 	}
 }
