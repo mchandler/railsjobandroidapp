@@ -5,6 +5,11 @@
     android:orientation="vertical" 
     android:background="#FFFFFF" >
 
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="List View Below" />
+    
     <ListView
         android:id="@+id/jobsView"
         android:layout_width="fill_parent"
