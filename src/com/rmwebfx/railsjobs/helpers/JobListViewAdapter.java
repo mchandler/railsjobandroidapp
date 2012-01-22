@@ -6,6 +6,7 @@ import com.rmwebfx.railsjobs.model.Job;
 import com.rmwebfx.railsjobs.R;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,21 +39,16 @@ public class JobListViewAdapter extends BaseAdapter {
 	}
 
 	public View getView(int position, View convertView, ViewGroup parent) {
-		View row = convertView;
 		Holder holder = null;
 		
-		if (row == null) {
-			row = inflater.inflate(resourceId, parent, false);
-			
-			holder = new Holder();
-			holder.jobTitle = (TextView) row.findViewById(R.id.jobTitle);
-			holder.company = (TextView) row.findViewById(R.id.company);
-			holder.whereAt = (TextView) row.findViewById(R.id.whereAt);
-			holder.source = (TextView) row.findViewById(R.id.source);
-			holder.postedOn = (TextView) row.findViewById(R.id.postedOn);
-		} else {
-			holder = (Holder) row.getTag();
-		}
+		View row = inflater.inflate(resourceId, parent, false);
+		
+		holder = new Holder();
+		holder.jobTitle = (TextView) row.findViewById(R.id.jobTitle);
+		holder.company = (TextView) row.findViewById(R.id.company);
+		holder.whereAt = (TextView) row.findViewById(R.id.whereAt);
+		holder.source = (TextView) row.findViewById(R.id.source);
+		holder.postedOn = (TextView) row.findViewById(R.id.postedOn);
 		
 		Job job = jobArray.get(position);
 		

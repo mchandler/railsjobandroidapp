@@ -18,11 +18,16 @@ import com.rmwebfx.railsjobs.model.SearchLocation;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
+import android.widget.ListView;
 
 public class JobsViewer extends Activity implements IServerRequestor{
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
+    private ArrayList<Job> jobsArray;
+	
+	@Override
+    public synchronized void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jobsviewer);
         
@@ -49,18 +54,29 @@ public class JobsViewer extends Activity implements IServerRequestor{
 		ServerCaller caller = new ServerCaller(this, feedURL);
 		Thread jsonFinder = new Thread(caller);
 		jsonFinder.start(); // spawn a thread that calls the feed.
+		
+		try {
+			this.wait(); // wait for the new thread to wake us up
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		showAllJobs();
     }
 
-	public void handleServerResponse(JSONObject json) throws JSONException {
+	public synchronized void handleServerResponse(JSONObject json) throws JSONException {
 		JSONArray resultsArray = json.getJSONArray("results");
 		JobsArrayBuilder builder = new JobsArrayBuilder();
-		ArrayList<Job> jobsArray = (ArrayList<Job>) builder.parse(resultsArray);
-		showAllJobs(jobsArray);
+		jobsArray = (ArrayList<Job>) builder.parse(resultsArray);
+		
+		this.notify(); // wake up the UI thread
 	}
 	
-	public void showAllJobs(ArrayList<Job> jobsArray) {
+	public void showAllJobs() {
 		JobListViewAdapter adapter = new JobListViewAdapter(this, R.layout.listviewjobrow, jobsArray);
+		ListView listview = (ListView) findViewById(R.id.jobsView);
 		
+		listview.setAdapter(adapter);
 	}
     
 }
