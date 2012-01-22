@@ -3,5 +3,6 @@
 
     <string name="hello">Hello World, StartScreen!</string>
     <string name="app_name">Ruby on Rails Job Finder</string>
+    <string name="app_icon_label">Rails Job Finder</string>
 
 </resources>

@@ -17,7 +17,7 @@ public class IndeedStringFormatter {
 		sb.append("&l=" + doLocationString(location));
 		
 		sb.append(doLimitString());
-		sb.append("&format=json");
+		sb.append("&format=json&sort=date");
 		
 		Log.d("Remote URL",sb.toString());
 		

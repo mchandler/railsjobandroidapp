@@ -20,6 +20,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 public class StartScreen extends Activity implements IServerRequestor {
@@ -95,5 +96,6 @@ public class StartScreen extends Activity implements IServerRequestor {
 		ListView listview = (ListView) findViewById(R.id.jobsView);
 		
 		listview.setAdapter(adapter);
+		//listview.setOnItemClickListener();
 	}
 }
