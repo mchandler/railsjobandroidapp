@@ -10,7 +10,7 @@ public class SetLocation extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.setlocation);
         
         Log.d("Rails Jobs Starting:","SetLocation");
     }

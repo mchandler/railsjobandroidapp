@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:id="@+id/locationTable"
+    android:orientation="vertical" 
+    android:background="#CC0000"
+    android:stretchColumns="0"
+    android:shrinkColumns="0"
+    android:padding="10dp">
+    
+    <TableRow>
+    	
+	    <TextView
+	        android:id="@+id/cityLabel"
+	        android:textSize="16dp"
+	        android:textStyle="bold"
+	        android:layout_height="fill_parent"
+	        android:paddingRight="5dp"
+	        android:text="City:"
+	        android:layout_gravity="right"
+	        android:gravity="center_vertical"
+	        android:textColor="#FFFFFF" />
+	    	
+	    <EditText
+	        android:layout_width="180dip"
+	        android:maxLength="30"
+	        android:inputType="textNoSuggestions"
+	        android:id="@+id/cityField" />
+    
+    </TableRow>
+    
+    <TableRow>
+    	
+	    <TextView
+	        android:id="@+id/stateLabel"
+	        android:textSize="16dp"
+	        android:textStyle="bold"
+	        android:layout_height="fill_parent"
+	        android:paddingRight="5dp"
+	        android:text="State:"
+	        android:layout_gravity="right"
+	        android:gravity="center_vertical"
+	        android:textColor="#FFFFFF" />
+	    	
+	    <EditText
+	        android:layout_width="10dip"
+	        android:maxLength="2"
+	        android:inputType="textNoSuggestions"
+	        android:id="@+id/stateField" />
+	    
+    </TableRow>
+    
+    <TableRow>
+    	
+	    <TextView
+	        android:id="@+id/postalLabel"
+	        android:textSize="16dp"
+	        android:textStyle="bold"
+	        android:layout_height="fill_parent"
+	        android:paddingRight="5dp"
+	        android:text="Postal:"
+	        android:layout_gravity="right"
+	        android:gravity="center_vertical"
+	        android:textColor="#FFFFFF" />
+	    	
+	    <EditText
+	        android:layout_width="50dip"
+	        android:maxLength="5"
+	        android:inputType="textNoSuggestions"
+	        android:id="@+id/postalField" />
+    
+    </TableRow>
+    
+    <TableRow>
+    	
+	    <Button
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Save Location"
+	        android:id="@+id/locationButton" />
+    
+    </TableRow>
+    
+</TableLayout>

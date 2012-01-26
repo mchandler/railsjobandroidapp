@@ -14,18 +14,27 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
+        public static final int cityField=0x7f050009;
+        public static final int cityLabel=0x7f050008;
         public static final int company=0x7f050003;
         public static final int jobTable=0x7f050001;
         public static final int jobTitle=0x7f050002;
         public static final int jobsView=0x7f050000;
+        public static final int locationButton=0x7f05000e;
+        public static final int locationTable=0x7f050007;
+        public static final int postalField=0x7f05000d;
+        public static final int postalLabel=0x7f05000c;
         public static final int postedOn=0x7f050006;
         public static final int source=0x7f050005;
+        public static final int stateField=0x7f05000b;
+        public static final int stateLabel=0x7f05000a;
         public static final int whereAt=0x7f050004;
     }
     public static final class layout {
         public static final int jobsviewer=0x7f030000;
         public static final int listviewjobrow=0x7f030001;
         public static final int main=0x7f030002;
+        public static final int setlocation=0x7f030003;
     }
     public static final class string {
         public static final int app_icon_label=0x7f040002;
