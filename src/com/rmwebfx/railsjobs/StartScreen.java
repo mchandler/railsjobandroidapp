@@ -54,14 +54,7 @@ public class StartScreen extends Activity implements IServerRequestor {
         Log.d("Rails Jobs Finder:","Looking for jobs...");
         
         SearchLocation location = (SearchLocation) new SearchLocation(this).getLatestRecord();
-        // **************************************************** //
-        // TODO: Remove this test data
-        location.setCity("Simi Valley");
-        location.setState("CA");
-        location.setPostal("93065");
-        // TODO: Remove test data above
-        // **************************************************** //
-    		
+        	
         URL feedURL = null;
 		try {
 			feedURL = new URL(IndeedStringFormatter.doFormat(location));

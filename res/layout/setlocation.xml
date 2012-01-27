@@ -17,7 +17,7 @@
 	        android:textStyle="bold"
 	        android:layout_height="fill_parent"
 	        android:paddingRight="5dp"
-	        android:text="City:"
+	        android:text="@string/city_label"
 	        android:layout_gravity="right"
 	        android:gravity="center_vertical"
 	        android:textColor="#FFFFFF" />
@@ -38,16 +38,19 @@
 	        android:textStyle="bold"
 	        android:layout_height="fill_parent"
 	        android:paddingRight="5dp"
-	        android:text="State:"
+	        android:text="@string/state_label"
 	        android:layout_gravity="right"
 	        android:gravity="center_vertical"
 	        android:textColor="#FFFFFF" />
-	    	
+
 	    <EditText
+	        android:id="@+id/stateField"
 	        android:layout_width="10dip"
-	        android:maxLength="2"
 	        android:inputType="textNoSuggestions"
-	        android:id="@+id/stateField" />
+	        android:maxLength="2" >
+
+	        <requestFocus />
+	    </EditText>
 	    
     </TableRow>
     
@@ -59,7 +62,7 @@
 	        android:textStyle="bold"
 	        android:layout_height="fill_parent"
 	        android:paddingRight="5dp"
-	        android:text="Postal:"
+	        android:text="@string/postal_label"
 	        android:layout_gravity="right"
 	        android:gravity="center_vertical"
 	        android:textColor="#FFFFFF" />
