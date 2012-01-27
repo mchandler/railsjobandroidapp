@@ -18,12 +18,15 @@ import com.rmwebfx.railsjobs.model.SearchLocation;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-public class StartScreen extends Activity implements IServerRequestor {
+public class StartScreen extends Activity implements IServerRequestor, OnItemClickListener {
 	private ArrayList<Job> jobsArray;
 	
 	@Override
@@ -89,6 +92,14 @@ public class StartScreen extends Activity implements IServerRequestor {
 		ListView listview = (ListView) findViewById(R.id.jobsView);
 		
 		listview.setAdapter(adapter);
-		//listview.setOnItemClickListener();
+		listview.setOnItemClickListener(this);
+	}
+
+	public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
+		Job job = jobsArray.get(position);
+		Uri uri = Uri.parse(job.getUrl());
+		
+		Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+		startActivity(intent);
 	}
 }
