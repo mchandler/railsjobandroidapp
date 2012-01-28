@@ -9,6 +9,19 @@
     android:shrinkColumns="0"
     android:padding="10dp">
     
+     <TableRow>
+    	
+	    <TextView
+	        android:textSize="18dp"
+	        android:textStyle="bold"
+	        android:layout_span="2"
+	        android:layout_height="fill_parent"
+	        android:text="Manage your Location"
+	        android:paddingBottom="20dp"
+	        android:textColor="#FFFFFF" />
+		
+    </TableRow>
+    
     <TableRow>
     	
 	    <TextView
@@ -27,7 +40,7 @@
 	        android:maxLength="30"
 	        android:inputType="textNoSuggestions"
 	        android:id="@+id/cityField" />
-    
+    	
     </TableRow>
     
     <TableRow>
@@ -47,11 +60,8 @@
 	        android:id="@+id/stateField"
 	        android:layout_width="10dip"
 	        android:inputType="textNoSuggestions"
-	        android:maxLength="2" >
-
-	        <requestFocus />
-	    </EditText>
-	    
+	        android:maxLength="2" />
+	        		    
     </TableRow>
     
     <TableRow>
@@ -72,17 +82,21 @@
 	        android:maxLength="5"
 	        android:inputType="textNoSuggestions"
 	        android:id="@+id/postalField" />
-    
+	    
     </TableRow>
     
     <TableRow>
-    	
+    	<Button
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:visibility="invisible" />
+    	    	
 	    <Button
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="Save Location"
+	        android:text="@string/save_button"
 	        android:id="@+id/locationButton" />
-    
+	    
     </TableRow>
     
 </TableLayout>

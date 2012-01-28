@@ -6,5 +6,6 @@
     <string name="city_label">City:</string>
     <string name="state_label">State:</string>
     <string name="postal_label">Postal:</string>
+    <string name="save_button">Save Location</string>
 
 </resources>
