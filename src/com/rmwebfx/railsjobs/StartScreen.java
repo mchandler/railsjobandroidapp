@@ -34,10 +34,16 @@ public class StartScreen extends Activity implements IServerRequestor, OnItemCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jobsviewer);
         
-        initializeLocation();
+        //initializeLocation();
     }
     
-    public void initializeLocation() {
+    @Override
+	public void onResume() {
+    	super.onResume();
+    	initializeLocation();
+    }
+	
+	public void initializeLocation() {
     	SearchLocation location = (SearchLocation) new SearchLocation(this).getLatestRecord();
     	
     	if (location == null || location.getCity() == null || location.getState() == null
