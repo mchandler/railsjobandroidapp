@@ -21,6 +21,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -105,5 +108,29 @@ public class StartScreen extends Activity implements IServerRequestor, OnItemCli
 		
 		Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 		startActivity(intent);
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.app_menu, menu);
+	    return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	    case R.id.menu_location:
+	        // TODO:
+	        return true;
+	    case R.id.menu_jobs:
+	        // TODO: 
+	        return true;
+	    case R.id.menu_about:
+	        // TODO: 
+	        return true;
+	    default:
+	        return super.onOptionsItemSelected(item);
+	    }
 	}
 }
