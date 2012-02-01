@@ -11,7 +11,7 @@
     	
 	    <TextView
 	        android:id="@+id/jobTitle"
-	        android:textSize="12dp"
+	        android:textSize="14dp"
 	        android:textStyle="bold"
 	        android:layout_weight="1"
 	        android:textColor="#99FFFF" />
@@ -22,13 +22,13 @@
     	
 	    <TextView
 	        android:id="@+id/company"
-	        android:textSize="11dp"
+	        android:textSize="12dp"
 	        android:layout_gravity="left"
 	        android:textColor="#FFFFFF" />
 	    	
 	    <TextView
 	        android:id="@+id/whereAt"
-	        android:textSize="11dp"
+	        android:textSize="12dp"
 	        android:layout_gravity="right"
 	        android:textColor="#FFFFFF" />
     
@@ -38,13 +38,13 @@
     	
 	    <TextView
 	        android:id="@+id/source"
-	        android:textSize="11dp"
+	        android:textSize="12dp"
 	        android:layout_gravity="left"
 	        android:textColor="#FFFFFF" />
 	    	
 	    <TextView
 	        android:id="@+id/postedOn"
-	        android:textSize="11dp"
+	        android:textSize="12dp"
 	        android:layout_gravity="right"
 	        android:textColor="#FFFFFF" />
     
