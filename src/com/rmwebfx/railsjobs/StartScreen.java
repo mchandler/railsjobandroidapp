@@ -34,7 +34,7 @@ public class StartScreen extends Activity implements IServerRequestor, OnItemCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jobsviewer);
         
-        //initializeLocation();
+        // NOTE: processing continues via onResume()
     }
     
     @Override
@@ -59,9 +59,7 @@ public class StartScreen extends Activity implements IServerRequestor, OnItemCli
     
     public synchronized void getJobs() {
         
-        // On the layout, let's display a "processing" image here
-        Log.d("Rails Jobs Finder:","Looking for jobs...");
-        
+        // TODO: On the layout, let's display a "processing" image here
         SearchLocation location = (SearchLocation) new SearchLocation(this).getLatestRecord();
         	
         URL feedURL = null;
