@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 
-public class SetLocation extends Activity implements OnClickListener {
+public class SetLocation extends RailsJobsActivity implements OnClickListener {
     
 	private SearchLocation location;
 	
@@ -24,8 +24,6 @@ public class SetLocation extends Activity implements OnClickListener {
         saveButton.setOnClickListener(this);
         
         initializeForm();
-        
-        Log.d("Rails Jobs Starting:","SetLocation");
     }
 
 	public void onClick(View v) {
