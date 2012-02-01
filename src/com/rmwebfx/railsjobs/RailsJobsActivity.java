@@ -1,6 +1,9 @@
 package com.rmwebfx.railsjobs;
 
+import com.rmwebfx.common.dialog.DialogHelper;
+
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,13 +22,16 @@ public class RailsJobsActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
 	    case R.id.menu_location:
-	        // TODO:
+	    	Intent location = new Intent().setClass(this, SetLocation.class);
+    		startActivity(location);
 	        return true;
 	    case R.id.menu_jobs:
-	        // TODO: 
+	    	Intent jobs = new Intent().setClass(this, StartScreen.class);
+    		startActivity(jobs); 
 	        return true;
 	    case R.id.menu_about:
-	        // TODO: 
+	        AlertDialog alert = DialogHelper.simpleDialog(this, "My about text here", "OK");
+	        alert.show();
 	        return true;
 	    default:
 	        return super.onOptionsItemSelected(item);
