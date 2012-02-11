@@ -1,6 +1,10 @@
 package com.rmwebfx.railsjobs;
 
+import com.google.ads.AdRequest;
+import com.google.ads.AdSize;
+import com.google.ads.AdView;
 import com.rmwebfx.common.dialog.DialogHelper;
+import com.rmwebfx.railsjobs.config.Constants;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -8,8 +12,11 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 
 public class RailsJobsActivity extends Activity {
+	
+	private AdView adView;
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -36,5 +43,18 @@ public class RailsJobsActivity extends Activity {
 	    default:
 	        return super.onOptionsItemSelected(item);
 	    }
+	}
+	
+	public void showAd(ViewGroup layout) {
+		adView = new AdView(this, AdSize.BANNER, Constants.googleAdsPublisherId);
+		
+		layout.addView(adView);
+		adView.loadAd(new AdRequest());
+	}
+	
+	@Override
+	public void onDestroy() {
+		adView.destroy();
+		super.onDestroy();
 	}
 }
