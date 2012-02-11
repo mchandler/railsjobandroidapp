@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -49,10 +50,7 @@ public class RailsJobsActivity extends Activity {
 	public void showAd(int viewId) {
 		ViewGroup viewGroup = (ViewGroup) findViewById(viewId);
 		adView = new AdView(this, AdSize.BANNER, Constants.googleAdsPublisherId);
-		
-		if (viewGroup == null) {
-			Log.d("NULL","YES");
-		}
+		adView.setGravity(Gravity.TOP);
 		
 		viewGroup.addView(adView);
 		

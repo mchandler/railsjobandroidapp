@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" 
     android:background="#CC0000"
     android:id="@+id/jobsViewerLayout">
 
+	<!-- <com.google.ads.AdView  
+		android:id="@+id/jobViewerAd" 
+		android:visibility="visible"
+		android:layout_width="fill_parent" 
+		android:layout_height="100px"
+		ads:adUnitId="a14f07b97d923df"
+		ads:testing="true"
+		ads:adSize="BANNER" /> -->
+    
     <ListView
         android:id="@+id/jobsView"
         android:layout_width="wrap_content"
-        android:layout_height="fill_parent" 
+        android:layout_height="0px"
+        android:layout_weight="1"
         android:cacheColorHint="#00000000" />
 
 </LinearLayout>

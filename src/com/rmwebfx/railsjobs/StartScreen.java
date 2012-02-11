@@ -92,8 +92,6 @@ public class StartScreen extends RailsJobsActivity implements IServerRequestor, 
 		jobsArray = (ArrayList<Job>) builder.parse(resultsArray);
 		totalJobs = Integer.parseInt(json.getString("totalResults"));
 		
-		Log.d("TOTAL", new Integer(totalJobs).toString());
-		
 		this.notify(); // wake up the UI thread
 	}
 	
