@@ -20,6 +20,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -27,6 +28,7 @@ import android.widget.ListView;
 
 public class StartScreen extends RailsJobsActivity implements IServerRequestor, OnItemClickListener {
 	private ArrayList<Job> jobsArray;
+	private int totalJobs;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -86,6 +88,9 @@ public class StartScreen extends RailsJobsActivity implements IServerRequestor, 
 		JSONArray resultsArray = json.getJSONArray("results");
 		JobsArrayBuilder builder = new JobsArrayBuilder();
 		jobsArray = (ArrayList<Job>) builder.parse(resultsArray);
+		totalJobs = Integer.parseInt(json.getString("totalResults"));
+		
+		Log.d("TOTAL", new Integer(totalJobs).toString());
 		
 		this.notify(); // wake up the UI thread
 	}
