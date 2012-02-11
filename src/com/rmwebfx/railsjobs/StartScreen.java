@@ -35,7 +35,7 @@ public class StartScreen extends RailsJobsActivity implements IServerRequestor, 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jobsviewer);
-        showAd(R.id.jobsViewerLayout);
+        //showAd(R.id.jobsViewerLayout);
         
         // NOTE: processing continues via onResume()
     }

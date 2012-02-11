@@ -7,14 +7,14 @@
     android:background="#CC0000"
     android:id="@+id/jobsViewerLayout">
 
-	<!-- <com.google.ads.AdView  
+	<com.google.ads.AdView  
 		android:id="@+id/jobViewerAd" 
-		android:visibility="visible"
-		android:layout_width="fill_parent" 
-		android:layout_height="100px"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
 		ads:adUnitId="a14f07b97d923df"
-		ads:testing="true"
-		ads:adSize="BANNER" /> -->
+		ads:loadAdOnCreate="true"
+		ads:testDevices="TEST_EMULATOR"
+		ads:adSize="BANNER" />
     
     <ListView
         android:id="@+id/jobsView"

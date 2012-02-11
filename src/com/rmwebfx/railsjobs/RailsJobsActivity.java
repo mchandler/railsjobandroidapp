@@ -50,8 +50,6 @@ public class RailsJobsActivity extends Activity {
 	public void showAd(int viewId) {
 		ViewGroup viewGroup = (ViewGroup) findViewById(viewId);
 		adView = new AdView(this, AdSize.BANNER, Constants.googleAdsPublisherId);
-		adView.setGravity(Gravity.TOP);
-		
 		viewGroup.addView(adView);
 		
 		AdRequest adRequest = new AdRequest();
