@@ -9,6 +9,7 @@ import com.rmwebfx.railsjobs.config.Constants;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -45,11 +46,19 @@ public class RailsJobsActivity extends Activity {
 	    }
 	}
 	
-	public void showAd(ViewGroup layout) {
+	public void showAd(int viewId) {
+		ViewGroup viewGroup = (ViewGroup) findViewById(viewId);
 		adView = new AdView(this, AdSize.BANNER, Constants.googleAdsPublisherId);
 		
-		layout.addView(adView);
-		adView.loadAd(new AdRequest());
+		if (viewGroup == null) {
+			Log.d("NULL","YES");
+		}
+		
+		viewGroup.addView(adView);
+		
+		AdRequest adRequest = new AdRequest();
+		adRequest.addTestDevice(AdRequest.TEST_EMULATOR);
+		adView.loadAd(adRequest);
 	}
 	
 	@Override

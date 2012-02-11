@@ -22,6 +22,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
@@ -34,6 +35,7 @@ public class StartScreen extends RailsJobsActivity implements IServerRequestor, 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jobsviewer);
+        showAd(R.id.jobsViewerLayout);
         
         // NOTE: processing continues via onResume()
     }
