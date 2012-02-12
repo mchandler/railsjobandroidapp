@@ -35,7 +35,7 @@ public class StartScreen extends RailsJobsActivity implements IServerRequestor, 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jobsviewer);
-        //showAd(R.id.jobsViewerLayout);
+        showAd(R.id.jobsViewerAd);
         
         // NOTE: processing continues via onResume()
     }
@@ -105,9 +105,9 @@ public class StartScreen extends RailsJobsActivity implements IServerRequestor, 
 
 	public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
 		Job job = jobsArray.get(position);
-		Uri uri = Uri.parse(job.getUrl());
 		
-		Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+		Intent intent = new Intent().setClass(this, JobDetails.class);
+		intent.putExtra("indeedUrl", job.getUrl());
 		startActivity(intent);
 	}
 }

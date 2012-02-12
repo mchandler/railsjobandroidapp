@@ -48,9 +48,7 @@ public class RailsJobsActivity extends Activity {
 	}
 	
 	public void showAd(int viewId) {
-		ViewGroup viewGroup = (ViewGroup) findViewById(viewId);
-		adView = new AdView(this, AdSize.BANNER, Constants.googleAdsPublisherId);
-		viewGroup.addView(adView);
+		adView = (AdView) findViewById(viewId);
 		
 		AdRequest adRequest = new AdRequest();
 		adRequest.addTestDevice(AdRequest.TEST_EMULATOR);
