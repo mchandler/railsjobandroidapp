@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 
-public class SetLocation extends RailsJobsActivity implements OnClickListener {
+public class SetLocation extends MenuActivity implements OnClickListener {
     
 	private SearchLocation location;
 	

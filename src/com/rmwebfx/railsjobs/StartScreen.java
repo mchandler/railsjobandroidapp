@@ -27,7 +27,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-public class StartScreen extends RailsJobsActivity implements IServerRequestor, OnItemClickListener {
+public class StartScreen extends MenuAndAdActivity implements IServerRequestor, OnItemClickListener {
 	private ArrayList<Job> jobsArray;
 	private int totalJobs;
 	
