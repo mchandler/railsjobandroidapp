@@ -26,6 +26,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class StartScreen extends MenuAndAdActivity implements IServerRequestor, OnItemClickListener {
 	private ArrayList<Job> jobsArray;

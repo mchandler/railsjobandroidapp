@@ -7,14 +7,14 @@
 
     <com.google.ads.AdView  
 		android:id="@+id/jobDetailsAd" 
-		android:layout_width="fill_parent" 
+		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content"
 		ads:adUnitId="@string/ads_pub_id"
 		ads:adSize="BANNER" />
     
     <WebView android:id="@+id/indeedView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="0px"
         android:layout_weight="1" />
 
 </LinearLayout>
