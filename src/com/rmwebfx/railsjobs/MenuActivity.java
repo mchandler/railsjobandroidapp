@@ -3,6 +3,8 @@ package com.rmwebfx.railsjobs;
 import com.google.ads.AdView;
 import com.rmwebfx.common.dialog.DialogHelper;
 
+import com.rmwebfx.railsjobs.config.Constants;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -31,7 +33,7 @@ public class MenuActivity extends Activity {
     		startActivity(jobs); 
 	        return true;
 	    case R.id.menu_about:
-	        AlertDialog alert = DialogHelper.simpleDialog(this, "My about text here", "OK");
+	        AlertDialog alert = DialogHelper.simpleDialog(this, Constants.aboutText, Constants.aboutButton);
 	        alert.show();
 	        return true;
 	    default:

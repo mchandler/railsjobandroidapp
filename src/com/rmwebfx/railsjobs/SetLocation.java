@@ -30,6 +30,7 @@ public class SetLocation extends MenuActivity implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.locationButton:
 			persistLocation();
+			this.finish(); // halts the activity and returns to previous
 			break;
 		}
 	}
